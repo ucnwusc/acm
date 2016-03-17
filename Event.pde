@@ -30,9 +30,22 @@ void keyPressed() {
   } else if (keyCode != CONTROL && keyCode != ALT) {
     myText = myText + key;
   } else {
-    s1=myText;
+    s1=trim(myText);
+    String s3="";
     myText="";
     int len=s1.length();
+    println("s1="+s1+" len="+len);
+    for (int i=0;i<len;i++){
+      for (int j=0;j<myE.length;j++){
+          if (s1.charAt(i)==myE[j]){
+               s3+=str(myE[j]);
+          }//if
+      }
+    }//for-for
+    s1=s3;
+    len=s1.length();
+    println("s1="+s1+" len="+len);
+    len=s1.length();
     if (len == 1){
       //bruteForce1();
       s2="Too Simple, No Need to Hack!";
@@ -47,6 +60,7 @@ void keyPressed() {
     }else if (len ==3){
       int ms = millis();
       s2=bruteForce3(s1);
+      println(trim(s1));
       int mytime=millis()-ms;
       textAlign(CENTER);
       text ("Hacking time: "+mytime+" milisecond",wt/2,ht/2-100);
@@ -54,13 +68,13 @@ void keyPressed() {
       println("len="+len);
       println(s2);
     }else if (len ==4){
-      s2="Not Enough Memory and CPU Power \nto Do the Hacking, \nMore Powerful Computer Needed!";
-      /*int ms = millis();
+      //s2="Not Enough Memory and CPU Power \nto Do the Hacking, \nMore Powerful Computer Needed!";
+      int ms = millis();
       s2=bruteForce4(s1);
       int mytime=millis()-ms;
       textAlign(CENTER);
       text ("Hacking time: "+mytime+" milisecond",wt/2,ht/2-100);
-      */
+      
     }else if (len >4){
       s2="Not Enough Memory and CPU Power \nto Do the Hacking, \nMore Powerful Computer Needed!";
       //bruteForce5();

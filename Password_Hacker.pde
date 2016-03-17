@@ -1,5 +1,9 @@
-/*
-*https://github.com/ucnwusc/pi.git
+/*Program Name: Mental Hash Functions
+*Author: Emily Zhou
+*Date: January 15, 2016
+*Descriptions:
+*Software tools used to verify mental hash functions to create good quality password
+*https://github.com/ucnwusc/acm.git
 */
 
 String s1="", s2="", myText = "";
